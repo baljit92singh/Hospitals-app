@@ -16,7 +16,7 @@ export class FilterPipe implements PipeTransform {
 }
 
 @Pipe({
-    name: 'FilterPipe',
+    name: 'FilterPipeName',
 })
 export class FilterPipeName implements PipeTransform {
     transform(value: any, input: string) {
