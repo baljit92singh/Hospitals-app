@@ -1,3 +1,15 @@
-<p>
-  side-nav works!
-</p>
+<mat-sidenav-container>
+    <mat-sidenav #sideNavFlag mode="side" opened="false">
+        <mat-list style="cursor: pointer;">
+            <h3 class="set-outlin" mat-subheader routerLink="/patient">
+                Patient's
+            </h3>
+            <h3 class="set-outlin" mat-subheader routerLink="/doctor">
+                Doctor's
+            </h3>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

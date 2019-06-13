@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SideNavService } from './side-nav.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('sideNavFlag') sideNavFlag: ElementRef;
+
+  constructor(public sideNavService: SideNavService) { }
 
   ngOnInit() {
+    this.sideNavService.sideNavFlag = this.sideNavFlag;
   }
 
 }

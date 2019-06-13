@@ -10,8 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { OrderBy } from './other/order';
 import { ListComponent } from './list/list.component';
+import { FilterPipe, FilterPipeName } from './other/order';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { ListComponent } from './list/list.component';
     SideNavComponent,
     HomeComponent,
     ListComponent,
-    OrderBy
+    FilterPipe,
+    FilterPipeName
   ],
   imports: [
     BrowserModule,
@@ -30,9 +31,6 @@ import { ListComponent } from './list/list.component';
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule
-  ],
-  exports:[
-      OrderBy
   ],
   providers: [],
   bootstrap: [AppComponent]

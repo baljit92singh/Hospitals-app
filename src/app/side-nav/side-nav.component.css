@@ -1,0 +1,12 @@
+.mat-sidenav {
+    width: 150px;
+}
+
+.mat-sidenav-container {
+    background-color: white !important;
+    height: 90vh;
+}
+
+.set-outline {
+    outline: none;
+}

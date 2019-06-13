@@ -38,7 +38,8 @@ export class HomeComponent implements OnInit {
       name: '',
       age: '',
       date: '',
-      doctors: ''
+      doctors: '',
+      gender: ''
     })
   }
 
@@ -47,7 +48,8 @@ export class HomeComponent implements OnInit {
       name: this.patientForm.controls['name'].value,
       age: this.patientForm.controls['age'].value,
       date: this.patientForm.controls['date'].value,
-      doctors: this.patientForm.controls['doctors'].value
+      doctors: this.patientForm.controls['doctors'].value,
+      gender: this.patientForm.controls['gender'].value,
     }
     this.recentList.push(item);
     this.resetForm();
@@ -63,7 +65,8 @@ export class HomeComponent implements OnInit {
       name: this.patientForm.controls['name'].value,
       age: this.patientForm.controls['age'].value,
       date: this.patientForm.controls['date'].value,
-      doctors: this.patientForm.controls['doctors'].value
+      doctors: this.patientForm.controls['doctors'].value,
+      gender: this.patientForm.controls['gender'].value,
     }
     this.recentList.push(item);
     this.resetForm();
@@ -86,6 +89,7 @@ export class HomeComponent implements OnInit {
     this.patientForm.controls['age'].setValue(item.age);
     this.patientForm.controls['date'].setValue(item.date);
     this.patientForm.controls['doctors'].setValue(item.doctors);
+    this.patientForm.controls['gender'].setValue(item.gender);
   }
 
   deletePatient(item) {
@@ -96,6 +100,7 @@ export class HomeComponent implements OnInit {
       duration: 2000,
     });
   }
+
 
   ngOnInit() {
   }
