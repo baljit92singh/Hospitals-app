@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatSnackBar, Sort } from '@angular/material';
 
@@ -16,7 +16,7 @@ export interface ShortTable {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
+
   patientForm: FormGroup;
   recentList = [];
   doctorList = [
