@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
+  queryString
   doctorList = [
     "Dr. Gopal Singh Dhanik",
     "Dr. Vivek Saxena",
