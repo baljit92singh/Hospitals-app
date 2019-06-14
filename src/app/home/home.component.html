@@ -37,14 +37,14 @@
             <mat-form-field class="example-full-width">
                 <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Search to type">
             </mat-form-field>
-            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <table matSort (matSortChange)="sortData($event)" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
                 <thead>
                     <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Full Name</th>
-                        <th class="mdl-data-table__cell--non-numeric">Gender</th>
-                        <th class="mdl-data-table__cell--non-numeric">Age</th>
-                        <th class="mdl-data-table__cell--non-numeric">Date</th>
-                        <th class="mdl-data-table__cell--non-numeric">Assign to doctor</th>
+                        <th class="mdl-data-table__cell--non-numeric" mat-sort-header="name">Full Name</th>
+                        <th class="mdl-data-table__cell--non-numeric" mat-sort-header="gender">Gender</th>
+                        <th class="mdl-data-table__cell--non-numeric" mat-sort-header="age">Age</th>
+                        <th class="mdl-data-table__cell--non-numeric" mat-sort-header="date">Date</th>
+                        <th class="mdl-data-table__cell--non-numeric" mat-sort-header="doctors">Assign to doctor</th>
                         <th class="mdl-data-table__cell--non-numeric">Actions</th>
                     </tr>
                 </thead>

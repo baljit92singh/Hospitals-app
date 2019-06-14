@@ -16,7 +16,8 @@ export interface ShortTable {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  desserts = [];
+  sortedData: ShortTable[];
   patientForm: FormGroup;
   recentList = [];
   doctorList = [
@@ -111,6 +112,37 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+    this.desserts.push(this.recentList)
+    this.sortedData = this.desserts.slice();
+    console.log(this.desserts);
+    console.log(this.sortedData);
   }
+  sortData(sort: Sort) {
+    console.log(sort)
+    const data = this.desserts.slice();
+    console.log(this.desserts);
+    console.log(this.sortedData);
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
 
+    this.sortedData = data.sort((a, b) => {
+      console.log(this.desserts);
+      console.log(this.sortedData);
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'name': return compare(a.name, b.name, isAsc);
+        case 'gender': return compare(a.gender, b.gender, isAsc);
+        case 'age': return compare(a.age, b.age, isAsc);
+        case 'date': return compare(a.date, b.date, isAsc);
+        case 'doctors': return compare(a.doctors, b.doctors, isAsc);
+        default: return 0;
+      }
+    });
+  }
+}
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
