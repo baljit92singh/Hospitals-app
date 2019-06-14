@@ -17,9 +17,9 @@ export interface ShortTable {
 })
 export class HomeComponent implements OnInit {
   desserts = [];
-  sortedData: ShortTable[];
+  recentList: ShortTable[] = [];
   patientForm: FormGroup;
-  recentList = [];
+  // recentList = [];
   doctorList = [
     "Dr. Gopal Singh Dhanik",
     "Dr. Vivek Saxena",
@@ -112,24 +112,25 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-    this.desserts.push(this.recentList)
-    this.sortedData = this.desserts.slice();
+    // this.desserts.push(this.recentList);
+    this.desserts = this.recentList
+    // this.recentList = this.desserts.slice();
     console.log(this.desserts);
-    console.log(this.sortedData);
+    console.log(this.recentList);
   }
   sortData(sort: Sort) {
     console.log(sort)
     const data = this.desserts.slice();
     console.log(this.desserts);
-    console.log(this.sortedData);
+    console.log(this.recentList);
     if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
+      this.recentList = data;
       return;
     }
 
-    this.sortedData = data.sort((a, b) => {
+    this.recentList = data.sort((a, b) => {
       console.log(this.desserts);
-      console.log(this.sortedData);
+      console.log(this.recentList);
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
